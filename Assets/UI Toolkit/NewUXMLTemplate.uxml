@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/NewUSSFile.uss?fileID=7433441132597879392&amp;guid=7548ca770b83810458d621d3c4a659be&amp;type=3#NewUSSFile" />
+    <ui:VisualElement name="Background" style="background-image: none; background-color: rgb(31, 31, 31);">
+        <ui:VisualElement name="FrameBackground" class="frameBackground" style="background-image: url(&quot;project://database/Assets/Gentleland/SteampunkUI/Art/BackGround.png?fileID=21300000&amp;guid=b464ee8350ce3984aa31ea54d12d9236&amp;type=3#BackGround&quot;); overflow: hidden; position: absolute; visibility: visible; align-self: auto; align-items: center; width: 660px; height: 59%; left: 210px; top: 500px;" />
+        <ui:VisualElement name="Gears" style="flex-grow: 1; position: absolute; right: 20%; min-width: 60%; min-height: 10%; bottom: 20%;">
+            <ui:VisualElement style="background-image: url(&quot;project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Alternative_Colors_4.png?fileID=-8831441479830076655&amp;guid=fc2c96f1421fbe54e82922ae89afef74&amp;type=3#Steampunk_UI_Alternative_Colors_4_6&quot;); flex-grow: 1; -unity-background-scale-mode: scale-to-fit; position: absolute; flex-direction: row; width: 30%; height: auto; min-height: 100px; bottom: 0; right: 15%;" />
+            <ui:VisualElement style="background-image: url(&quot;project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Alternative_Colors_4.png?fileID=-8831441479830076655&amp;guid=fc2c96f1421fbe54e82922ae89afef74&amp;type=3#Steampunk_UI_Alternative_Colors_4_6&quot;); flex-grow: 1; -unity-background-scale-mode: scale-to-fit; position: absolute; flex-direction: row-reverse; width: 25%; height: auto; min-height: 250px; bottom: -10%; right: -3%; rotate: -59deg; align-self: flex-end; justify-content: center;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Frame" class="frame">
+            <ui:VisualElement style="background-image: url(&quot;project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Frames_3.png?fileID=-595620182695351188&amp;guid=c3cbd015370c5294385a8d880c234850&amp;type=3#Steampunk_UI_Frames_3_5&quot;); flex-grow: 1; -unity-background-scale-mode: scale-to-fit; left: -8%; position: absolute; flex-direction: row; width: 50%; height: auto; top: 0; min-height: 150px;" />
+            <ui:VisualElement style="background-image: url(&quot;project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Frames_3.png?fileID=5654969685363657340&amp;guid=c3cbd015370c5294385a8d880c234850&amp;type=3#Steampunk_UI_Frames_3_6&quot;); flex-grow: 1; -unity-background-scale-mode: scale-to-fit; position: absolute; flex-direction: row; width: 50%; height: auto; top: 0; min-height: 150px; right: -8%;" />
+            <ui:VisualElement style="background-image: url(&quot;project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Frames_3.png?fileID=4864721600614679434&amp;guid=c3cbd015370c5294385a8d880c234850&amp;type=3#Steampunk_UI_Frames_3_7&quot;); flex-grow: 1; -unity-background-scale-mode: scale-to-fit; position: absolute; flex-direction: row; width: 50%; height: auto; min-height: 250px; bottom: 1%; left: -5%;" />
+            <ui:VisualElement name="ZoneTextes" style="flex-grow: 1; margin-top: 10%; margin-right: 10%; margin-bottom: 15%; margin-left: 10%;">
+                <ui:TextField picking-mode="Ignore" value="filler text" style="top: 15%; overflow: visible;">
+                    <ui:VisualElement style="flex-grow: 1; position: absolute;" />
+                </ui:TextField>
+                <ui:TextField picking-mode="Ignore" value="filler text" style="top: 35%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
