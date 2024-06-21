@@ -45,6 +45,7 @@ public class MenuScript : MonoBehaviour
             } else
             {
                 errorLabel.text = "";
+                this.gameObject.SetActive(false);
             }
         }
     }

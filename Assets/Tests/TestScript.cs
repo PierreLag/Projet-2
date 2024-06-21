@@ -83,6 +83,6 @@ public class TestScript
         using (var clicked = new NavigationSubmitEvent() { target = button })
             button.SendEvent(clicked);
 
-        Assert.IsTrue(errorLabel.text == "");
+        Assert.IsFalse(uIDocument.gameObject.activeSelf);
     }
 }
