@@ -11,6 +11,7 @@ public class MenuScript : MonoBehaviour
     TextField passwordField;
     Button loginButton;
     Label errorLabel;
+    VisualElement rotatingGear;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class MenuScript : MonoBehaviour
         passwordField = root.Q<TextField>("Password");
         loginButton = root.Q<Button>("Login");
         errorLabel = root.Q<Label>("ErrorLabel");
+        rotatingGear = root.Q<VisualElement>("RotatingGear");
 
         loginButton.clicked += LoginConfirmation;
     }
@@ -27,7 +29,7 @@ public class MenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        rotatingGear.transform.rotation *= Quaternion.Euler(0, 0, 100f * Time.deltaTime);
     }
 
     void LoginConfirmation()
