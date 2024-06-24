@@ -1,0 +1,4 @@
+.unity-text-element {
+	-unity-font: url("project://database/Assets/Gentleland/SteampunkUI/Fonts/Arvo/Arvo.ttf?fileID=12800000&guid=e5c356a4b721b024daa3ce4df25a2a24&type=3#Arvo");
+	-unity-font-definition: none;
+}

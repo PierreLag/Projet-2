@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI%20Toolkit/ScriptOnlyUSS.uss" />
+    <VisualElement name="root" style="width: 100%; height: 100%; flex-direction: row; justify-content: center; align-self: center; margin: auto; font-size: 30px; background-color: #1F1F1F">
+        <Button text="Ajouter" name="add-button" style="width: 40%; height: 3%; position: absolute; top: 5%; font-size: 100%;"/>
+        <ListView name="list-view" style="width: 50%; height: 70%; position: relative; top: 15%"/>
+    </VisualElement>
+</UXML>
