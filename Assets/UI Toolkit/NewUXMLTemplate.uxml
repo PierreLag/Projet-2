@@ -12,8 +12,12 @@
             <ui:VisualElement style="background-image: url(&quot;project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Frames_3.png?fileID=4864721600614679434&amp;guid=c3cbd015370c5294385a8d880c234850&amp;type=3#Steampunk_UI_Frames_3_7&quot;); flex-grow: 1; -unity-background-scale-mode: stretch-to-fill; position: absolute; flex-direction: row-reverse; width: 35%; height: 15%; min-height: 150px; bottom: 0; left: 0; align-self: flex-end; align-items: flex-end; justify-content: space-between;" />
             <ui:VisualElement name="RotatingGear" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Alternative_Colors_1.png?fileID=4936998130221711999&amp;guid=2dc12ad8908ff3047bb25165c5b3aee9&amp;type=3#Steampunk_UI_Alternative_Colors_1_0&quot;); width: 20%; height: 10%; -unity-background-scale-mode: scale-to-fit; left: 15%; bottom: 15%;" />
             <ui:VisualElement name="ZoneTextes" style="flex-grow: 1; margin-top: 5%; margin-right: 10%; margin-bottom: 15%; margin-left: 10%;">
-                <ui:Label tabindex="-1" text="Email" parse-escape-sequences="true" display-tooltip-when-elided="true" style="top: 15%; align-items: center; align-self: center;" />
-                <ui:TextField picking-mode="Ignore" value="Enter text..." name="Email" style="top: 15%; overflow: visible;">
+                <ui:Label tabindex="-1" text="Email" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="top: 15%; align-items: center; align-self: center;" />
+                <ui:TextField picking-mode="Ignore" name="Email" style="top: 15%; overflow: visible;">
+                    <ui:VisualElement style="flex-grow: 1; position: absolute;" />
+                </ui:TextField>
+                <ui:Label tabindex="-1" text="Pseudo" parse-escape-sequences="true" display-tooltip-when-elided="true" style="top: 22.5%; align-items: center; align-self: center;" />
+                <ui:TextField picking-mode="Ignore" name="Pseudo" style="top: 22.5%; overflow: visible;">
                     <ui:VisualElement style="flex-grow: 1; position: absolute;" />
                 </ui:TextField>
                 <ui:Label tabindex="-1" text="Password" parse-escape-sequences="true" display-tooltip-when-elided="true" style="top: 30%; align-items: center; align-self: center;" />

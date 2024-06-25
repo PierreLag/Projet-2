@@ -2,3 +2,15 @@
 	-unity-font: url("project://database/Assets/Gentleland/SteampunkUI/Fonts/Arvo/Arvo.ttf?fileID=12800000&guid=e5c356a4b721b024daa3ce4df25a2a24&type=3#Arvo");
 	-unity-font-definition: none;
 }
+
+#unity-content-and-vertical-scroll-container {
+	color: white;
+	-unity-font: url("project://database/Assets/Gentleland/SteampunkUI/Fonts/Arvo/Arvo.ttf?fileID=12800000&guid=e5c356a4b721b024daa3ce4df25a2a24&type=3#Arvo");
+	-unity-font-definition: none;
+	font-size: 250%;
+}
+
+.unity-list-view__item {
+	border-color: white;
+	border-width: 5px;
+}

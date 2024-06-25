@@ -7,7 +7,7 @@
 >
     <Style src="project://database/Assets/UI%20Toolkit/ScriptOnlyUSS.uss" />
     <VisualElement name="root" style="width: 100%; height: 100%; flex-direction: row; justify-content: center; align-self: center; margin: auto; font-size: 30px; background-color: #1F1F1F">
-        <Button text="Ajouter" name="add-button" style="width: 40%; height: 3%; position: absolute; top: 5%; font-size: 100%;"/>
+        <Button text="Ajouter" name="add-button" style="width: 40%; height: 200px; position: absolute; top: 5%; font-size: 200px;"/>
         <ListView name="list-view" style="width: 50%; height: 70%; position: relative; top: 15%"/>
     </VisualElement>
 </UXML>

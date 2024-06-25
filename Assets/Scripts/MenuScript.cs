@@ -8,16 +8,21 @@ public class MenuScript : MonoBehaviour
 {
     VisualElement root;
     TextField emailField;
+    TextField pseudoField;
     TextField passwordField;
     Button loginButton;
     Label errorLabel;
     VisualElement rotatingGear;
+
+    [SerializeField]
+    PlayersScript playersScript;
 
     // Start is called before the first frame update
     void Start()
     {
         root = this.GetComponent<UIDocument>().rootVisualElement;
         emailField = root.Q<TextField>("Email");
+        pseudoField = root.Q<TextField>("Pseudo");
         passwordField = root.Q<TextField>("Password");
         loginButton = root.Q<Button>("Login");
         errorLabel = root.Q<Label>("ErrorLabel");
@@ -46,8 +51,15 @@ public class MenuScript : MonoBehaviour
                 errorLabel.text = "Please input a valid email address";
             } else
             {
-                errorLabel.text = "";
-                this.gameObject.SetActive(false);
+                if (pseudoField.text == "")
+                {
+                    errorLabel.text = "Please insert a username";
+                } else
+                {
+                    errorLabel.text = "";
+                    playersScript.Login(pseudoField.text);
+                    this.gameObject.SetActive(false);
+                }
             }
         }
     }
