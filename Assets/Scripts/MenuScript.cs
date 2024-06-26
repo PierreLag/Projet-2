@@ -58,7 +58,7 @@ public class MenuScript : MonoBehaviour
                 {
                     errorLabel.text = "";
                     playersScript.Login(pseudoField.text);
-                    this.gameObject.SetActive(false);
+                    GetComponent<UIDocument>().enabled = false;
                 }
             }
         }

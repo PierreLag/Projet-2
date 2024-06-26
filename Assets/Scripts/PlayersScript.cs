@@ -14,7 +14,7 @@ public class PlayersScript : MonoBehaviourPunCallbacks
     [SerializeField]
     int maxPlayersList = 10;
 
-    string pseudo;
+    string nickname;
 
     // Start is called before the first frame update
     void Start()
@@ -24,26 +24,34 @@ public class PlayersScript : MonoBehaviourPunCallbacks
         playersListView = root.Q<ListView>("list-view");
 
         playersList = new List<string>(maxPlayersList);
+        //playersListView.itemsSource = PhotonNetwork.PlayerList;
         playersListView.itemsSource = playersList;
-        ajouterButton.clicked += AddPlayer;
 
         playersListView.fixedItemHeight = 90f;
         playersListView.virtualizationMethod = CollectionVirtualizationMethod.DynamicHeight;
+
+        PhotonNetwork.ConnectUsingSettings();
     }
 
     [PunRPC]
-    void AddPlayer()
+    void AddPlayer(string nickname)
     {
         playersListView.Clear();
-        Debug.Log("Ajout de joueur " + pseudo);
-        playersList.Add(pseudo);
+        playersList.Add(nickname);
+
         playersListView.RefreshItems();
     }
 
     public void Login(string pseudo)
     {
-        this.pseudo = pseudo;
+        nickname = pseudo;
         PhotonNetwork.JoinRandomOrCreateRoom();
-        photonView.RPC("AddPlayer", RpcTarget.AllBuffered);
+    }
+
+    public override void OnJoinedRoom()
+    {
+        base.OnJoinedRoom();
+
+        photonView.RPC("AddPlayer", RpcTarget.AllBuffered, nickname);
     }
 }
