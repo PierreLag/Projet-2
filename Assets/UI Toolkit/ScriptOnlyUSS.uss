@@ -1,6 +1,8 @@
 .unity-text-element {
 	-unity-font: url("project://database/Assets/Gentleland/SteampunkUI/Fonts/Arvo/Arvo.ttf?fileID=12800000&guid=e5c356a4b721b024daa3ce4df25a2a24&type=3#Arvo");
 	-unity-font-definition: none;
+	color: #936D22;
+	text-shadow: #000000 -10px 10px 10px;
 }
 
 #unity-content-and-vertical-scroll-container {
@@ -13,4 +15,38 @@
 .unity-list-view__item {
 	border-color: white;
 	border-width: 5px;
+	-unity-text-align: middle-center;
+}
+
+#frame {
+	background-image: url("project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Alternative_Colors_4.png");
+	width: 80%;
+	height: 70%;
+	position: absolute;
+	top: 10%;
+	-unity-slice-top: 500px;
+	-unity-slice-bottom: 500px;
+	-unity-slice-left: -100px;
+	-unity-slice-right: -100px;
+	-unity-slice-scale: 10px;
+}
+
+#frame-background {
+	background-image: url("project://database/Assets/Gentleland/SteampunkUI/Art/BackGround.png");
+	width: 65%;
+	height: 58%;
+	position: absolute;
+	top: 20%;
+	border-radius: 10%;
+}
+
+#disconnect-button {
+	background-image: url("project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Buttons_2.png");
+	background-color: transparent;
+	width: 60%;
+	height: 200px;
+	position: absolute;
+	bottom: 10%;
+	font-size: 150px;
+	border-width: 0px;
 }

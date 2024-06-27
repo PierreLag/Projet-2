@@ -465,6 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f007f0fd925f764ab7612dbd8563da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loginPage: {fileID: 157046533}
   maxPlayersList: 10
 --- !u!114 &1157416450
 MonoBehaviour:
