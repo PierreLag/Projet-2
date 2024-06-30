@@ -23,21 +23,32 @@ public class PlayersScript : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+        // Obtention des objets de l'UIDocument.
         root = GetComponent<UIDocument>().rootVisualElement;
         disconnectButton = root.Q<Button>("disconnect-button");
         playersListView = root.Q<ListView>("list-view");
 
+        // Création de la liste des joueurs et lien entre cette liste et l'affichage ListView des joueurs.
         playersList = new List<string>(maxPlayersList);
         playersListView.itemsSource = playersList;
 
+        // Gestion de l'affichage des objets dans ListView.
         playersListView.fixedItemHeight = 90f;
         playersListView.virtualizationMethod = CollectionVirtualizationMethod.DynamicHeight;
 
+        // Ajout de l'action de déconnexion au bouton Disconnect.
         disconnectButton.clicked += OnDisconnectClicked;
 
+        // Connexion au serveur Photon.
         PhotonNetwork.ConnectUsingSettings();
     }
 
+    /**
+     <summary>
+     Cette méthode est envoyée en RPC à tous les récipients affectés afin d'ajouter un joueur à leur liste de joueurs dans le salon.
+     </summary>
+     <param name="nickname"> Le pseudo du joueur qui rejoint. </param>
+    **/
     [PunRPC]
     void AddPlayer(string nickname)
     {
@@ -47,6 +58,12 @@ public class PlayersScript : MonoBehaviourPunCallbacks
         playersListView.RefreshItems();
     }
 
+    /**
+     <summary>
+     Cette méthode permet de se connecter à un salon en utilisant un pseudonyme.
+     </summary>
+     <param name="pseudo"> Le pseudo du joueur. </param>
+    **/
     public void Login(string pseudo)
     {
         nickname = pseudo;
@@ -57,14 +74,21 @@ public class PlayersScript : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
 
+        // Une fois que le joueur rejoint le salon, on indique aux autres joueurs et ceux qui viendront qu'on est arrivé.
         photonView.RPC("AddPlayer", RpcTarget.AllBuffered, nickname);
     }
 
+    /**
+     * <summary>Cette méthode fait appel à la coroutine de déconnexion pour que le joueur quitte le salon dans lequel il se trouve.</summary>
+    **/
     void OnDisconnectClicked()
     {
         StartCoroutine("Disconnect");
     }
 
+    /**
+     * <summary>Cette coroutine envoie un message de déconnexion à tous les autres joueurs dans le salon, puis se déconnecte du salon.</summary>
+    **/
     public IEnumerator Disconnect()
     {
         photonView.RPC("RemovePlayer", RpcTarget.AllBuffered, nickname);
@@ -77,18 +101,22 @@ public class PlayersScript : MonoBehaviourPunCallbacks
     {
         base.OnDisconnected(cause);
 
-        Debug.Log("Disconnecting");
+        // Debug.Log("Disconnecting");
 
         playersList.RemoveRange(0, playersList.Count -1);
         loginPage.enabled = true;
     }
 
+    /**
+     * <summary>Cette méthode est envoyée en RPC à tous les récipients affectés afin de retirer un joueur de leur liste de joueurs dans le salon.</summary>
+     * <param name="nickname"> Le pseudo du joueur qui quitte. </param>
+    **/
     [PunRPC]
     void RemovePlayer(string nickname)
     {
         playersListView.Clear();
         playersList.Remove(nickname);
-        Debug.Log("Removing " + nickname);
+        // Debug.Log("Removing " + nickname);
         playersListView.RefreshItems();
     }
 }

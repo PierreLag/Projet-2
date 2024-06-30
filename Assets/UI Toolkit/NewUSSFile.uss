@@ -19,10 +19,10 @@ VisualElement {
 }
 
 .unity-text-field {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
     -unity-background-scale-mode: stretch-to-fill;
     overflow: visible;
     padding-top: 0;
@@ -33,15 +33,14 @@ VisualElement {
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    height: 4%;
-    min-height: 40px;
+    height: 8%;
+    min-height: 50px;
+    background-image: none;
+    max-height: 90px;
 }
 
 .unity-text-field__input {
-    overflow: visible;
-    visibility: visible;
-    background-image: url("project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Dialogue_3.png?fileID=5185045578303202313&guid=44a8b76b70d48db4aa2dcac3eb64eb88&type=3#Steampunk_UI_Dialogue_3_3");
-    -unity-slice-scale: 0.5px;
+    background-image: url("project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Slots_Arrows.png?fileID=4508516164457878799&guid=4d6d3e529a32a4141bbac8264745777d&type=3#Steampunk_UI_Slots_Arrows_9");
     padding-bottom: 10px;
     background-color: rgba(0, 0, 0, 0);
     border-left-color: rgba(0, 0, 0, 0);
@@ -65,8 +64,11 @@ VisualElement {
     text-shadow: -27.9px 6.2px 0 rgb(0, 0, 0);
     -unity-font-definition: initial;
     -unity-font: url("project://database/Assets/Gentleland/SteampunkUI/Fonts/Arvo/Arvo.ttf?fileID=12800000&guid=e5c356a4b721b024daa3ce4df25a2a24&type=3#Arvo");
-    font-size: 35px;
+    font-size: 400%;
     color: rgb(147, 109, 34);
+    min-height: 50px;
+    height: 6%;
+    max-height: 80px;
 }
 
 .unity-button {
@@ -75,4 +77,10 @@ VisualElement {
     -unity-font: url("project://database/Assets/Gentleland/SteampunkUI/Fonts/Arvo/Arvo.ttf?fileID=12800000&guid=e5c356a4b721b024daa3ce4df25a2a24&type=3#Arvo");
     font-size: 30px;
     color: rgb(147, 109, 34);
+}
+
+.text-field-background {
+    width: 100%;
+    height: 100%;
+    background-image: url("project://database/Assets/Gentleland/SteampunkUI/Art/Steampunk_UI_Slots_Arrows.png?fileID=-4972393294115483615&guid=4d6d3e529a32a4141bbac8264745777d&type=3#Steampunk_UI_Slots_Arrows_8");
 }

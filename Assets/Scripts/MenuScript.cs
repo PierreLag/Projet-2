@@ -34,9 +34,13 @@ public class MenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Fait tourner l'engrenage à chaque frame.
         rotatingGear.transform.rotation *= Quaternion.Euler(0, 0, 100f * Time.deltaTime);
     }
 
+    /**
+     * <summary>Cette méthode vérifie que les champs soient remplis, et vérifie que l'email inséré possède un bon format.</summary>
+    **/
     void LoginConfirmation()
     {
         if (emailField.text == "" || passwordField.text == "")
