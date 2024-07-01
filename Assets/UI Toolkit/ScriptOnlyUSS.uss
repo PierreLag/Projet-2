@@ -16,6 +16,7 @@
 	border-color: white;
 	border-width: 5px;
 	-unity-text-align: middle-center;
+	color: #936D22;
 }
 
 #frame {
