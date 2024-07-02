@@ -16,7 +16,7 @@ public class TestScript
         SceneManager.LoadScene(0);
         yield return null;
 
-        GameObject go = GameObject.Find("UIDocument");
+        GameObject go = GameObject.Find("UIDocumentLogin");
         UIDocument uIDocument = go.GetComponent<UIDocument>();
         Assert.IsNotNull(uIDocument);
     }
@@ -31,7 +31,7 @@ public class TestScript
         SceneManager.LoadScene(0);
         yield return null;
 
-        GameObject go = GameObject.Find("UIDocument");
+        GameObject go = GameObject.Find("UIDocumentLogin");
         UIDocument uIDocument = go.GetComponent<UIDocument>();
         Label errorLabel = uIDocument.rootVisualElement.Q<Label>("ErrorLabel");
         Button button = uIDocument.rootVisualElement.Q<Button>("Login");
@@ -50,13 +50,17 @@ public class TestScript
         SceneManager.LoadScene(0);
         yield return null;
 
-        GameObject go = GameObject.Find("UIDocument");
+        GameObject go = GameObject.Find("UIDocumentLogin");
         UIDocument uIDocument = go.GetComponent<UIDocument>();
         Label errorLabel = uIDocument.rootVisualElement.Q<Label>("ErrorLabel");
         Button button = uIDocument.rootVisualElement.Q<Button>("Login");
+        TextField pseudoField = uIDocument.rootVisualElement.Q<TextField>("Pseudo");
         TextField password = uIDocument.rootVisualElement.Q<TextField>("Password");
+        TextField email = uIDocument.rootVisualElement.Q<TextField>("Email");
 
         password.value = "Test";
+        pseudoField.value = "Test";
+        email.value = "test";
         using (var clicked = new NavigationSubmitEvent() { target = button })
             button.SendEvent(clicked);
 
@@ -71,18 +75,20 @@ public class TestScript
         SceneManager.LoadScene(0);
         yield return null;
 
-        GameObject go = GameObject.Find("UIDocument");
+        GameObject go = GameObject.Find("UIDocumentLogin");
         UIDocument uIDocument = go.GetComponent<UIDocument>();
         Label errorLabel = uIDocument.rootVisualElement.Q<Label>("ErrorLabel");
         Button button = uIDocument.rootVisualElement.Q<Button>("Login");
+        TextField pseudoField = uIDocument.rootVisualElement.Q<TextField>("Pseudo");
         TextField password = uIDocument.rootVisualElement.Q<TextField>("Password");
         TextField email = uIDocument.rootVisualElement.Q<TextField>("Email");
 
         password.value = "Test";
+        pseudoField.value = "Test";
         email.value = "test@email.com";
         using (var clicked = new NavigationSubmitEvent() { target = button })
             button.SendEvent(clicked);
 
-        Assert.IsFalse(uIDocument.gameObject.activeSelf);
+        Assert.IsTrue(errorLabel.text == "");
     }
 }
